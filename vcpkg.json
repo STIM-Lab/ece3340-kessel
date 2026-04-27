@@ -1,0 +1,10 @@
+{
+  "dependencies" : [ "glfw3", "glm", {
+    "name" : "imgui",
+    "default-features" : false,
+    "features" : [ "glfw-binding", "opengl3-binding" ]
+  }, "opengl", "glew", {
+    "name" : "implot",
+    "version>=" : "1.0"
+  } ]
+}
