@@ -1,20 +1,7 @@
 #include "kessel.h"
 
 
-/*
- * This function is a starting point for creating your own user interface. I just create a UI window and
- * add a timer. Other elements can be added by putting them between ImGui::Begin() and ImGui::End()
- */
-void DrawInterfaceWindow() {
-	// Create a new ImGui window to show the image - call it whatever you want
-	ImGui::Begin("Your Interface");
 
-	// Display the render time for a single pass through the main loop
-	ImGui::Text("Render Time: %fms", frame_seconds * 1000);
-
-	// This is the only thing displayed in the window
-	ImGui::End();
-}
 
 /*
 * This function renders the user interface. I'm actually cheating a little bit here: the only user

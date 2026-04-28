@@ -56,6 +56,29 @@ void load_gravity(const char* filename) {
 		gy.push_back(y);
 		m.push_back(mass);
 	}
+}
+
+void dummy_data(int G = 10, int P = 100) {
+
+	for (int g = 0; g < G; g++) {
+		double x = (double)rand() / (double)RAND_MAX * 20.0 - 10.0;
+		double y = (double)rand() / (double)RAND_MAX * 20.0 - 10.0;
+		gx.push_back(x);
+		gy.push_back(y);
+		m.push_back(1);
+	}
+
+	float dp = 20.0f / (float)P;
+	std::vector<float> path_x;
+	std::vector<float> path_y;
+	for (int p = 0; p < P; p++) {
+		float x = -10.0 + (float) p * dp;
+		float y = 10 * sin(x);
+		path_x.push_back(x);
+		path_y.push_back(y);
+	}
+	px.push_back(path_x);
+	py.push_back(path_y);
 
 }
 
@@ -133,27 +156,9 @@ int main(int argc, const char* argv[]) {
 
 
 	/* Add dummy data so that some points appear in the plot when students first compile and run the demo
-	 *
 	 */
-	if (argc > 1)
-		load_gravity(argv[1]);
-	else {
-		gx.push_back(0);
-		gy.push_back(0);
-
-		gx.push_back(1);
-		gy.push_back(1);
-
-		gx.push_back(2);
-		gy.push_back(1);
-
-		gx.push_back(3);
-		gy.push_back(2);
-
-		gx.push_back(4);
-		gy.push_back(1);
-	}
-
+	if (argc > 1) load_gravity(argv[1]);
+	else dummy_data();
 
 
 	/*

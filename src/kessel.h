@@ -18,11 +18,9 @@
 // used to time events (currently only the main loop is timed)
 #include <chrono>
 
-extern float* output_image_ptr;
-extern int resolution;
-extern float frame_seconds;
 extern std::vector<float> gx;
 extern std::vector<float> gy;
+extern std::vector<float> m;
 extern std::vector< std::vector<float> > px;
 extern std::vector< std::vector<float> > py;
 
