@@ -16,6 +16,7 @@
 #include <implot_internal.h>
 
 // used to time events (currently only the main loop is timed)
+#include <vector>
 #include <chrono>
 
 extern std::vector<float> gx;
